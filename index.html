@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12 Bar Riot</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #logo {
+            max-width: 500px;
+            margin: 20px auto;
+            display: block;
+        }
+        nav button {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .content-section { display: none; margin-top: 30px; }
+        #info { display: block; } /* Default visible */
+    </style>
+</head>
+<body>
+
+    <img src="logo.jpg" alt="12 Bar Riot" id="logo">
+
+    <nav>
+        <button onclick="show('info')">Band Info</button>
+        <button onclick="show('gallery')">Gallery</button>
+        <button onclick="show('music')">Music</button>
+    </nav>
+
+    <div id="info" class="content-section">
+        <h2>About the Band</h2>
+        <p>This is where you drop the bio.</p>
+    </div>
+
+    <div id="gallery" class="content-section">
+        <h2>Gallery</h2>
+        <p>Images go here.</p>
+    </div>
+
+    <div id="music" class="content-section">
+        <h2>Music</h2>
+        <audio controls>
+            <source src="Silver Platter.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
